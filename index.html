@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mid DSoc4CS-Score Ranking</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border-left-color: #3498db;
+      animation: spin 1s ease infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">Mid DSoc4CS-Score</h1>
+
+    <div class="mb-4">
+      <input type="text" id="search-input" placeholder="Search by Code or Nickname"
+        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+
+    <div id="loading-spinner" class="flex justify-center items-center">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white rounded-lg shadow-md mt-4 hidden" id="data-table">
+        <thead>
+          <tr>
+            <th class="py-2 px-3 bg-blue-500 text-white text-sm">อันดับ</th>
+            <th class="py-2 px-3 bg-blue-500 text-white text-sm">เลขนิสิต</th>
+            <th class="py-2 px-3 bg-blue-500 text-white text-sm">ชื่อเล่น</th>
+            <th class="py-2 px-3 bg-blue-500 text-white text-sm">ทางเลือก / 40 </th>
+            <th class="py-2 px-3 bg-blue-500 text-white text-sm">เติมคำตอบ / 20</th>
+          </tr>
+        </thead>
+        <tbody id="score-table">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
